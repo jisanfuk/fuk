@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BIG/SMALL Predictor</title>
+    <style>
+        body {
+            background-color: #ccffcc;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        .result {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .BIG {
+            color: green;
+        }
+        .SMALL {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>BIG/SMALL Predictor</h1>
+    <form method="post">
+        <input type="text" name="input1" placeholder="Result 1 (BIG/SMALL)" required><br>
+        <input type="text" name="input2" placeholder="Result 2 (BIG/SMALL)" required><br>
+        <input type="text" name="input3" placeholder="Result 3 (BIG/SMALL)" required><br>
+        <input type="text" name="input4" placeholder="Result 4 (BIG/SMALL)" required><br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+        <div class="result {{ prediction }}">{{ prediction }}</div>
+    {% endif %}
+</body>
+</html>
